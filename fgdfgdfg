@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+int data;
+struct node *next;
+}*head=NULL,*last=NULL;
+void insertatbegin()
+{
+struct node *p;
+int value;
+p=(struct node *)malloc(sizeof(struct node));
+printf("enter data to insert");
+scanf("%d",&value);
+p->data=NULL;
+p->next=NULL;
+if(head==NULL){
+head=p;
+last=p;
+}
+else
+{
+p->next=head;
+head=p;
+}
+}
+void display()
+{
+struct node *temp;
+if(head==NULL)
+{
+printf("list is empty");
+}
+else
+{
+temp=head;
+while(temp!=NULL)
+{
+printf("%d->",temp->data);
+temp=temp->next;
+}
+}
+}
+void main()
+{
+int op;
+while(1)
+{
+printf("\n1.insert at begin\n2.display\n3.exit\n");
+printf("\n enter option");
+scanf("%d",&op);
+switch(op)
+{
+case 1:insertatbegin();
+break;
+case 2:display();
+break;
+case 3:exit(0);
+break;
+default:printf("\n enter correct option");
+}
+}
+}
+}
+}
